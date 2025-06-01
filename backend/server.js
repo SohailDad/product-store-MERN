@@ -57,6 +57,25 @@ app.delete('/products/:id', async (req, res) => {
 });
 
 
+app.put('/products/:id', async (req, res) => {
+    const {id} = req.params;
+    const product = req.body;
+
+    if (!product.name || !product.price || !product.imageUrl) {
+        return res.status(400).json({success:false, message: 'All field are required' });
+      }
+
+    try {
+        const updatedProduct = await Product.findByIdAndUpdate(id, product, { new: true });
+
+        res.status(200).json({ success: true, message: 'Product updated successfully', data: updatedProduct });
+    } catch (error) {
+        console.error("Error in updating products: ",error);
+        res.status(404).json({ success: false, message: "Product not found" });
+    }
+});
+
+
 app.listen(PORT, () => {
   connectDB();  
   console.log(`Server is running on http://localhost:${PORT}`);
