@@ -1,1 +1,1 @@
-# product store project in MERN stack.
+# Product store project in MERN stack.
