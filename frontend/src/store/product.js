@@ -26,7 +26,7 @@ export const useProductStore = create((set) => ({
         })));
 
         return {
-             success: false,
+             success: true,
                 message: 'Products created successfully',
         };
     }

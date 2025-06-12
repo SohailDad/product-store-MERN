@@ -13,16 +13,15 @@ export const getProducts = async(req, res) => {
     }
 
 export const createProduct =  async (req, res) => {
-  const product = req.body;
-
-  if (!product.name || !product.price || !product.imageUrl) {
+    const product = req.body;
+  if (!product.name || !product.price || !product.image) {
     return res.status(400).json({success:false, message: 'All field are required' });
   }
 
   const newProduct = new Product({
     name: product.name,
     price: product.price,
-    imageUrl: product.imageUrl,
+    imageUrl: product.image,
   });
 
   try {
