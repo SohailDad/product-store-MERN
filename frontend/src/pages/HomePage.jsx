@@ -27,7 +27,7 @@ function HomePage() {
         </Text>
 
         <SimpleGrid 
-          column={{ base: 1, md: 2, lg: 3 }}
+          columns={{ base: 1, md: 2, lg: 3 }}
           spacing={10}
           w={'full'}
         >
