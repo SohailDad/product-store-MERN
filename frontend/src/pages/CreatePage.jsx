@@ -32,7 +32,11 @@ export default function CreatePage() {
 			   isClosable: true,
 		   });
 	   }
-
+	   setNewProduct({
+		   name: '',
+		   price: '',
+		   image: ''
+	   });
     }
 
    
